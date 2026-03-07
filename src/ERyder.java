@@ -6,13 +6,13 @@ public class ERyder {
     private boolean isAvailable;
     private double kmDriven;
 
-    public void Bike() {
+    public ERyder() {
         this.bikeID = "";
         this.batteryLevel = 0;
         this.isAvailable = false;
         this.kmDriven = 0.0;
     }
-    public void Bike(String bikeID, int batteryLevel, boolean isAvailable, double keDriven) {
+    public ERyder(String bikeID, int batteryLevel, boolean isAvailable, double keDriven) {
         this.bikeID = bikeID;
         setBatteryLevel(batteryLevel);
         this.isAvailable = isAvailable;
