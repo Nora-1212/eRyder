@@ -9,12 +9,12 @@ public class ERyder {
     private double totalFare;
 
 
-    public static String COMPANY_NAME = "ERyder";
-    public static Double BASE_FARE = 1.0;
-    public static double PRE_MINUTE_FARE = 0.5;
+    public static final String COMPANY_NAME = "ERyder";
+    public static final Double BASE_FARE = 1.0;
+    public static final double PRE_MINUTE_FARE = 0.5;
 
     private final String LINKED_ACCOUNT;
-    private final String LINKED_PHONE_NUMBER;
+    private final long LINKED_PHONE_NUMBER;
 
 
     public ERyder(String bikeID, int batteryLevel, boolean isAvailable, double kmDriven) {
@@ -22,12 +22,12 @@ public class ERyder {
         this.batteryLevel = batteryLevel;
         this.isAvailable = isAvailable;
         this.kmDriven = kmDriven;
-        this.LINKED_ACCOUNT = "greeting";
-        this.LINKED_PHONE_NUMBER = "1234567";
+        this.LINKED_ACCOUNT = "greetg";
+        this.LINKED_PHONE_NUMBER = 1234567;
         this.usageInMinutes = 0;
         this.totalFare = 0.0;
     }
-    public ERyder(String bikeID, int batteryLevel, boolean isAvailable, double kmDriven, String LINKED_ACCOUNT, String LINKED_PHONE_NUMBER) {
+    public ERyder(String bikeID, int batteryLevel, boolean isAvailable, double kmDriven, String LINKED_ACCOUNT, long LINKED_PHONE_NUMBER) {
         this.bikeID = bikeID;
         this.batteryLevel = batteryLevel;
         setBatteryLevel(batteryLevel);
@@ -46,13 +46,13 @@ public class ERyder {
         }
     }
     public void printBikeDetails(){
-        System.out.println("The linked account is "+LINKED_ACCOUNT);
-        System.out.println("The linked phone number is "+LINKED_PHONE_NUMBER);
+        System.out.println("Bike ID: " + bikeID + ".");
+        System.out.println("The linked account is "+LINKED_ACCOUNT+".");
+        System.out.println("The linked phone number is "+LINKED_PHONE_NUMBER+".");
         System.out.println("The total fare is "+calculateFare(usageInMinutes)+".");
-        System.out.println("Bike ID: " + bikeID);
-        System.out.println("Battery Level: " + batteryLevel);
-        System.out.println("Is Available: " + isAvailable);
-        System.out.println("Distance Travelled: " + kmDriven);
+        System.out.println("Battery Level: " + batteryLevel+".");
+        System.out.println("Is Available: " + isAvailable+".");
+        System.out.println("Distance Travelled: " + kmDriven+".");
     }
     public void printRideDetails(int usageInMinutes){
         double fare = calculateFare(usageInMinutes);
