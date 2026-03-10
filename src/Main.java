@@ -1,6 +1,6 @@
 public class Main {
     public static void main(String[] args) {
-        ERyder bike1 = new ERyder();
+        ERyder bike1 = new ERyder("B001",80,true,120);
         bike1.printBikeDetails();
         System.out.println("----------------------------------");
 
