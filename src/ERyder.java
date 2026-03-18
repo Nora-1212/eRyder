@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 //TIP 要<b>运行</b>代码，请按 <shortcut actionId="Run"/> 或
 // 点击装订区域中的 <icon src="AllIcons.Actions.Execute"/> 图标。
 public class ERyder {
@@ -131,5 +133,45 @@ public class ERyder {
 
     public long getLINKED_PHONE_NUMBER() {
         return LINKED_PHONE_NUMBER;
+    }
+
+    public double getUsageInMinutes() {
+        return usageInMinutes;
+    }
+
+    public void setUsageInMinutes(double usageInMinutes) {
+        this.usageInMinutes = usageInMinutes;
+    }
+
+    public double getTotalFare() {
+        return totalFare;
+    }
+
+    public void setTotalFare(double totalFare) {
+        this.totalFare = totalFare;
+    }
+
+    public static String getCompanyName() {
+        return COMPANY_NAME;
+    }
+
+    public static void setCompanyName(String companyName) {
+        COMPANY_NAME = companyName;
+    }
+
+    public static Double getBaseFare() {
+        return BASE_FARE;
+    }
+
+    public static void setBaseFare(Double baseFare) {
+        BASE_FARE = baseFare;
+    }
+
+    public static double getPreMinuteFare() {
+        return PRE_MINUTE_FARE;
+    }
+
+    public static void setPreMinuteFare(double preMinuteFare) {
+        PRE_MINUTE_FARE = preMinuteFare;
     }
 }
