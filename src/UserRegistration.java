@@ -27,7 +27,6 @@ public class UserRegistration {
     private boolean cardNumberValid;
     private boolean cardStillValid;
     private boolean validCVV;
-
     public void registration(){
         System.out.println("Here are your two choices:");
         System.out.println("1. Regular User");
