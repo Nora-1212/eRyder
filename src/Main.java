@@ -35,12 +35,19 @@
 
 import java.util.Scanner;
 
+//public class Main {
+//    public class uMain {
+//        public static void main(String[] args) {
+//            UserRegistration userRegistration = new UserRegistration();
+//            userRegistration.registration();
+//            System.out.println(userRegistration);
+//        }
+//    }
+//}
+
 public class Main {
-    public class uMain {
-        public static void main(String[] args) {
-            UserRegistration userRegistration = new UserRegistration();
-            userRegistration.registration();
-            System.out.println(userRegistration);
-        }
+    public static void main(String[] args) {
+        AdminPanel adminPanel = new AdminPanel();
+        adminPanel.userManagementOptions();
     }
 }
