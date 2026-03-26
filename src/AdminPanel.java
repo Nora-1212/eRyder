@@ -70,6 +70,7 @@ public class AdminPanel {
         } catch (NumberFormatException e) {
             System.out.println("Invalid input. Please enter a number.");
             return;
+
         }
 
         for (int i = 0;i < userCount;i++){
