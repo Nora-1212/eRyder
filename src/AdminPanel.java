@@ -9,22 +9,17 @@ public class AdminPanel {
 
     public void userManagementOptions(){
         while (true){
-            System.out.println("Welcome to E-Ryder Admininstrator Panel.");
-            System.out.println("What do you want to do?\n" +
+            System.out.println("Please select an option: \n" +
                     "1.Add New Users\n" +
                     "2.View Registered Users\n" +
                     "3.Remove Registered Users\n" +
                     "4.Update Registered Users\n" +
-                    "5.EXIT\n");
-            System.out.print("Please enter your choice: ");
+                    "5.Demo the Bike Rental System\n" +
+                    "6.EXIT");
 
             int choice;
-            try {
-                choice = Integer.parseInt(scanner.nextLine());
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid choice. Please try again");
-                continue;
-            }
+            choice = Integer.parseInt(scanner.nextLine());
+
             switch (choice){
                 case 1:
                     addNewUsers();
@@ -38,19 +33,14 @@ public class AdminPanel {
                 case 4:
                     updateRegisteredUsers();
                     break;
-                case 5:
+                case 6:
                     System.out.println("Exiting program...");
                     scanner.close();
                     return;
-                default:
-                    System.out.println("Invalid choice. Please try again");
-                    System.out.println("What do you want to do?\n" +
-                            "1.Add New Users\n" +
-                            "2.View Registered Users\n" +
-                            "3.Remove Registered Users\n" +
-                            "4.Update Registered Users\n" +
-                            "5.EXIT\n");
-                    System.out.print("Please enter your choice: ");
+                case 5:
+                    BikeRental bikeRental = new BikeRental();
+                    bikeRental.simulateApplicationInput();
+
             }
         }
 
@@ -256,4 +246,5 @@ public class AdminPanel {
 
         System.out.println("User updated successfully!");
     }
+
 }
