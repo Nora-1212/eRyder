@@ -53,6 +53,7 @@ public class AdminPanel {
     public void manageRequests(){
         BikeService bikeService = new BikeService();
         Scanner sc = new Scanner(System.in);
+
         while (true){
             System.out.println("1. View Queue\n" +
                     "2. Update Queue (Remove First)\n" +
