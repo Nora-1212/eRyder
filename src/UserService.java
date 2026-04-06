@@ -12,7 +12,7 @@ public class UserService {
         this.registeredUsersList = registeredUsersLists;
     }
 
-    public void addNewUsers() {
+    public RegisteredUsers addNewUsers() {
         System.out.println("How many users would you like to add? ");
         int userCount;
         try {
@@ -20,41 +20,51 @@ public class UserService {
             userCount = Integer.parseInt(input);
             if (userCount <= 0) {
                 System.out.println("Please enter a positive number.");
-                return;
+                return null;
             }
         } catch (NumberFormatException e) {
             System.out.println("Invalid input. Please enter a number.");
-            return;
+            return null;
 
         }
 
+        RegisteredUsers createdUser = null;
+
         for (int i = 0;i < userCount;i++){
             System.out.println("\n---Entering details for User "+(i+1)+"---");
-            RegisteredUsers newUser = new RegisteredUsers();
+
+            System.out.println("Enter user type (e.g., Rider/Driver/VIP): ");
+            String userTypeInput = scanner.nextLine();
 
             System.out.println("Enter full name: ");
-            newUser.setFullName(scanner.nextLine());
+            String fullName = scanner.nextLine();
 
             System.out.println("Enter email address: ");
-            newUser.setEmailAddress(scanner.nextLine());
+            String emailAddress = scanner.nextLine();
 
             System.out.println("Enter date of birth (YYYY-MM-DD): ");
-            newUser.setDateOfBirth(scanner.nextLine());
+            String dateOfBirth = scanner.nextLine();
 
             System.out.println("Enter card number: ");
-            newUser.setCardNumber(scanner.nextInt());
+            long cardNumber = Long.parseLong(scanner.nextLine());
 
             System.out.println("Enter card expiry date (MM/YY): ");
-            newUser.setCardExpiryData(scanner.nextLine());
+            String cardExpiryData = scanner.nextLine();
 
             System.out.println("Enter card provider: ");
-            newUser.setCardProvider(scanner.nextLine());
+            String cardProvider = scanner.nextLine();
 
             System.out.println("Enter CVV: ");
-            newUser.setCvv(scanner.nextInt());
+            int cvv = Integer.parseInt(scanner.nextLine());
 
-            System.out.println("Enter user type (e.g., Rider/Driver): ");
-            newUser.setUserType(scanner.nextLine());
+            RegisteredUsers newUser;
+            if (userTypeInput.equalsIgnoreCase("VIP")){
+                newUser = new VIPUser(fullName,emailAddress,dateOfBirth,cardNumber,cardExpiryData,cardProvider,cvv,userTypeInput);
+            } else {
+                newUser = new RegularUser(fullName,emailAddress,dateOfBirth,cardNumber,cardExpiryData,cardProvider,cvv,userTypeInput);
+            }
+
+            registeredUsersList.add(newUser);
 
 
             System.out.println("\n--- Enter last three trips for this user ---");
@@ -94,7 +104,7 @@ public class UserService {
             registeredUsersList.add(newUser);
             System.out.println("\nUser " + (i + 1) + " added successfully!");
         }
-
+        return createdUser;
     }
 
     public void viewRegisteredUsers() {

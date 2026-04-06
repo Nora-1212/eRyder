@@ -21,7 +21,12 @@ public class AdminPanel {
 
             switch (choice){
                 case 1:
-                    userService.addNewUsers();
+                    RegisteredUsers user = userService.addNewUsers();
+                    if (user != null){
+                        System.out.println("\n=== Starting Rental Simulation ===");
+                        BikeRental bikeRental = new BikeRental();
+                        bikeRental.simulateApplicationInput(user);
+                    }
                     break;
                 case 2:
                     userService.viewRegisteredUsers();

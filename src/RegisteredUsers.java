@@ -96,6 +96,25 @@ public class RegisteredUsers {
         lastThreeTrips[lastThreeTrips.length-1] = trip;
     }
 
+    public RegisteredUsers(String fullName, String emailAddress, String dateOfBirth, long cardNumber, String cardExpiryData, String cardProvider, int cvv, String userType) {
+        this.fullName = fullName;
+        this.emailAddress = emailAddress;
+        this.dateOfBirth = dateOfBirth;
+        this.cardNumber = cardNumber;
+        this.cardExpiryData = cardExpiryData;
+        this.cardProvider = cardProvider;
+        this.cvv = cvv;
+        this.userType = userType;
+    }
+
+    public double calculateFare(double basrFare){
+        return basrFare;
+    }
+
+    public void displayUserType(){
+        System.out.println("Registered User");
+    }
+
     @Override
     public String toString() {
         return "RegisteredUsers:" +
